@@ -29,4 +29,17 @@ public class AccountTest {
         account.withdraw(10);
         assertThat(account.balance).isEqualTo(10);
     }
+
+    @Test
+    public void transferAnAmountToIncreaseDestinationBalanceAndDecreaseSourceBalance() {
+        Account accountA = new Account();
+        Account accountB = new Account();
+
+        accountA.deposit(100);
+        accountA.transfer(accountB, 10);
+
+        assertThat(accountA.balance).isEqualTo(90);
+        assertThat(accountB.balance).isEqualTo(10);
+    }
+
 }
