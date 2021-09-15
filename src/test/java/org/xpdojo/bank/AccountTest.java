@@ -42,4 +42,11 @@ public class AccountTest {
         assertThat(accountB.balance).isEqualTo(10);
     }
 
+    @Test
+    public void displaySlip() {
+        Account accountA = new Account();
+        accountA.deposit(100);
+        accountA.displayBalanceSlip();
+    }
+
 }
